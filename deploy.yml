@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linux-app
+  labels:
+    app: linux
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: linux
+  template:
+    metadata:
+      labels:
+        app: linux
+    spec:
+      containers:
+      - name: linux 
+        image: techworldwithnana/youtube
+        ports:
+        - containerPort: 80
